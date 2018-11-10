@@ -7,7 +7,7 @@ function createMap(locations, regions) {
         },
         "colorSteps": 10,
         "areasSettings": {
-         
+
             "alpha": 0.8,
             "unlistedAreasAlpha": 0.1,
             "balloonText": "[[title]] joined EU at [[customData]]"
@@ -26,4 +26,4 @@ function createMap(locations, regions) {
         }
     });
 }
-    createMap([createLocationPoint("New York", 40, 70, 10)], [createCountryShade("US", "United States", 10)]);
+    createMap([createLocPoint("New York", 40, 70, 10)], [createCountryShade("US", "United States", 10)]);
