@@ -17,3 +17,19 @@ function createLocationPoint(name, longitude, latitude, index) {
         "value": index
     }; //returns the formatted object
 }
+
+/**
+ * This return the data needed for the 
+ * @author Luke Trujillo
+ * @param   {[[Type]]} code   [[Description]]
+ * @param   {[[Type]]} name   [[Description]]
+ * @param   {[[Type]]} change [[Description]]
+ * @returns {object}   [[Description]]
+ */
+function createCountryShade(code, name, change) {
+    return {
+        "title": name,
+        "id": code,
+        "customData": change
+    };
+}
