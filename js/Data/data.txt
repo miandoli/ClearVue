@@ -1,0 +1,12 @@
+v:independent
+c:cars
+d:1.13e13
+d:-2.23e16
+d:0.92
+v:dependent
+c:co2
+v:feedback
+c:temp
+d:
+d:
+d:
