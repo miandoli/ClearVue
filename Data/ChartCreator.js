@@ -61,20 +61,45 @@ function createMap(data) {
         "dataProvider": {
             "map": "usaLow",
             "colorRanges": [{
-              "start": 0,
+              "start": 26,
+              "end": 45,
+              "color": "#66ffff",
+              "variation": .4
+            }, {
+                "start": 46,
+                "end": 50,
+                "color": "#00ffcc",
+                "variation": .4
+            }, {
+              "start": 51,
               "end": 55,
-              "color": "#00ccff",
-              "variation": 0.4
+              "color": "#00ff99",
+              "variation": .4
             }, {
               "start": 56,
+              "end": 60,
+              "color": "#00ff00",
+              "variation": .4
+            }, {
+              "start": 61,
               "end": 65,
-              "color": "#ffffcc",
-              "variation": 0.4
+              "color": "#99ff33",
+              "variation": .4
             }, {
               "start": 66,
-              "end": 100,
+              "end": 70,
+              "color": "#ffff66",
+              "variation": .4
+            }, {
+              "start": 71,
+              "end": 75,
+              "color": "#ff9933",
+              "variation": .4
+            }, {
+              "start": 76,
+              "end": 95,
               "color": "#cc3300",
-              "variation": 0.4
+              "variation": .4
             }],
             "areas": data
         },
@@ -84,11 +109,36 @@ function createMap(data) {
             "unlistedAreasAlpha": 0.1,
             "balloonText": "[[title]] joined EU at [[customData]]"
         },
-        "valueLegend": {
+        "legend": {
+            "bottom": 10,
             "right": 10,
-            "minValue": "cool",
-            "maxValue": "hot"
-        },
+            "align": "right",
+            "data": [{
+              "color": "#66ffff",
+              "title": "<45"
+            }, {
+              "color": "#00ffcc",
+              "title": "46-50"
+            }, {
+              "color": "#00ff99",
+              "title": "51-55"
+            }, {
+              "color": "#00ff00",
+              "title": "56-60"
+            }, {
+              "color": "#99ff33",
+              "title": "61-65"
+            }, {
+              "color": "#ffff66",
+              "title": "66-70"
+            }, {
+              "color": "#ff9933",
+              "title": "71-75"
+            }, {
+              "color": "#cc3300",
+              "title": ">76"
+            }]
+          },
         "areasSettings": {
             "autoZoom": false
         },
@@ -105,7 +155,7 @@ function createData(samples, index) {
     var sample = samples[index];
     var states = sample.states;
     var data = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 50; i++) {
         var state = states[i];
         var point = {"id": state.abrv, "value": state.temp};
         console.log(state.abrv + ": " + state.temp);

@@ -57,7 +57,7 @@ AmCharts.themes.dark = {
 	},
 
 	AmLegend: {
-		color: "#e7e7e7"
+		color: "#000000"
 	},
 
 	AmGraph: {
