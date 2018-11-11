@@ -10,7 +10,7 @@ tr{
 }
 
 td{
-   /* border: solid black;*/
+   border: solid black;
 }
 
 p{
@@ -19,12 +19,21 @@ p{
     text-align: center;
 }
 
+li{
+    font-size: 24px;
+    text-align: left;
+}
+
 h1{
     text-align: center;
 }
 
 #nested{
     height: 300px;
+}
+
+#prof{
+    border-radius: 90px;
 }
 
 #map{
@@ -38,6 +47,7 @@ h1{
 .innermain {
     background-color: #eeffff;
     padding: 30px;
+    border-radius: 25px;
 }
 
 #headerimage{
