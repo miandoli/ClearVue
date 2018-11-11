@@ -1,0 +1,61 @@
+body {
+    background-color: #03fcb8;
+
+}
+
+.main {
+    background-color: #fffff4;
+    padding: 20px;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 25%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+#carslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 49px;
+    height: 26px;
+    border: 0;
+    background: url('images/car_slider.png');
+    cursor: pointer;
+}
+
+#factoryslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 49px;
+    height: 26px;
+    border: 0;
+    background: url('images/factory_slider.png');
+    cursor: pointer;
+}
+
+#farmslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    background: url('images/farm_slider.png');
+    cursor: pointer;
+}

@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="js/DataCreator.js"></script>
-    <script src="js/SimCreator.js"></script>
+    <script src="Data/data.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css" type="text/css" media="all" />
 </head>
 <body>
+    <div class="main">
     <h1>ClearVue</h1>
-    <button onclick="createSim(5)">Sim</button>
+    <button onclick="startSim()">Sim</button>
+    <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
+        <input type="range" min="1" max="100" value="50" class="slider" id="carslider" oninput="sliderChange(this.value, this.id)">
+        <output id="caroutput"></output>
+    </div>
+    <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
+        <input type="range" min="1" max="100" value="50" class="slider" id="factoryslider" oninput="sliderChange(this.value, this.id)">
+        <output id="factoryoutput"></output>
+    </div>
+    <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
+        <input type="range" min="1" max="100" value="50" class="slider" id="farmslider" oninput="sliderChange(this.value, this.id)">
+        <output id="farmoutput"></output>
+    </div>
+    </div>  
 </body>
 </html>
