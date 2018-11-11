@@ -1,17 +1,19 @@
 body {
     background-color: #5fc9fc;
-
-}
-
-.main {
-    background-color: #eeffff;
     padding: 20px;
 }
-/*
-#headerimage{
-    background-image: url("images/factory_background.png");
+
+.innermain {
+    background-color: #eeffff;
+    padding: 30px;
 }
-*/
+
+#headerimage{
+    width: 99%;
+    position: fixed;
+    padding: 0px;
+    z-index: -1;
+}
 
 #chartdiv {
     width: 100%;
