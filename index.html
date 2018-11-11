@@ -21,6 +21,11 @@
         <input type="range" min="1" max="100" value="50" class="slider" id="farmslider" oninput="sliderChange(this.value, this.id)">
         <output id="farmoutput"></output>
     </div>
-    </div>  
+    </div>
+    <script>
+        sliderChange(50, "carslider");
+        sliderChange(50, "factoryslider");
+        sliderChange(50, "farmslider");
+    </script>
 </body>
 </html>

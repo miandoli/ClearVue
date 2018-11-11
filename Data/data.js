@@ -14,6 +14,7 @@ function simOne(car, farm, fact, states) {
     for (var i = 0; i < 10; i++) {
         var state = states[i];
         var points = car * state.fCar + farm * state.fFarm + fact * state.fFact;
+        console.log(points);
         state.temp += points;
         states[i] = state;
     }
@@ -49,22 +50,16 @@ function createStates() {
         var info = getLine(text);
         text = nextLine(text);
         var name = info.substring(0, info.indexOf(" "));
-        console.log(name);
         info = info.substring(info.indexOf(" ") + 1);
         var abrv = info.substring(0, 2);
-        console.log(abrv);
         info = info.substring(3);
         var temp = info.substring(0, 4);
-        console.log(temp);
         info = info.substring(5);
         var fCar = info.substring(0, 4);
-        console.log(fCar);
         info = info.substring(5);
         var fFarm = info.substring(0, 4);
-        console.log(fFarm);
         info = info.substring(5);
         var fFact = info.substring(0, 4);
-        console.log(fFact);
         info = info.substring(5);
         newState = new State(name, abrv, temp, fCar, fFarm, fFact);
         states.push(newState);
