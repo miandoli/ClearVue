@@ -8,6 +8,8 @@ function startSim(){
     var samples = createSim(cars / 100.0, farms / 100.0, facts / 100.0);
     var counter = 0;
     var lblTime = document.getElementById("lblTime");
+    var button = document.getElementById("btn");
+    button.setAttribute("onclick", "");
     var tmr = setInterval(function() {
         if (counter < 120) {
             var year = Math.trunc(counter / 12) + 1;
@@ -15,8 +17,14 @@ function startSim(){
             lblTime.innerHTML = "Year: " + year + " Month: " + month;
             var sampleData = createData(samples, counter++);
             createMap(sampleData);
+        } else if (counter == 120) {
+            button.setAttribute("onclick", "startSim()");
         }
     }, 175);
+}
+
+function blankFunction() {
+
 }
 
 function sliderChange(val, id) {
