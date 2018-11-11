@@ -158,7 +158,6 @@ function createData(samples, index) {
     for (var i = 0; i < 50; i++) {
         var state = states[i];
         var point = {"id": state.abrv, "value": state.temp};
-        console.log(state.abrv + ": " + state.temp);
         data.push(point);
     }
     return data;

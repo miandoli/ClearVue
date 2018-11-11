@@ -27,6 +27,11 @@ h1{
     text-align: center;
 }
 
+#lblTime {
+    text-align: left;
+    margin-left: 40%;
+}
+
 #nested{
     height: 300px;
 }

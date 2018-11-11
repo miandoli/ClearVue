@@ -11,11 +11,12 @@ function startSim(){
     var tmr = setInterval(function() {
         if (counter < 120) {
             var year = Math.trunc(counter / 12) + 1;
-            lblTime.innerHTML = "Year: " + year;
+            var month = counter % 12 + 1;
+            lblTime.innerHTML = "Year: " + year + " Month: " + month;
             var sampleData = createData(samples, counter++);
             createMap(sampleData);
         }
-    }, 100);
+    }, 175);
 }
 
 function sliderChange(val, id) {

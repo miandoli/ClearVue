@@ -11,13 +11,25 @@ function createSim(car, farm, fact) {
     return samples;
 }
 
+function randNorm(mean) {
+    var stdev = 0.05;
+    var u1 = 1 - Math.random();
+    var u2 = 1 - Math.random();
+    var z = Math.sqrt(-2 * Math.log(u1)) * Math.sin(2 * Math.PI * u2);
+    var scaled = Number(mean) + Number(z * stdev);
+    return scaled;
+}
+
 function simOne(car, farm, fact, states) {
     var newStates = [];
     for (var i = 0; i < 50; i++) {
         var state = states[i];
-        var points = car * state.fCar + farm * state.fFarm + fact * state.fFact;
+        var rCar = randNorm(state.fCar);
+        var rFarm = randNorm(state.fFarm);
+        var rFact = randNorm(state.fFact);
+        var points = car * rCar + farm * rFarm + fact * rFact;
         var newTemp = Number(state.temp) + Number(points);
-        var newState = new State(state.name, state.abrv, newTemp, state.fCar, state.fFarm, state.fFact);
+        var newState = new State(state.name, state.abrv, newTemp, rCar, rFarm, rFact);
         newStates.push(newState);
     }
     return newStates;
@@ -53,10 +65,8 @@ function createStates() {
         text = nextLine(text);
         var name = info.substring(0, info.indexOf("|"));
         info = info.substring(info.indexOf("|") + 1);
-        console.log(name);
         var abrv = info.substring(0, 5);
         info = info.substring(6);
-        console.log(abrv);
         var temp = info.substring(0, 4);
         info = info.substring(5);
         var fCar = info.substring(0, 4);
