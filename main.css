@@ -1,11 +1,21 @@
 body {
-    background-color: #03fcb8;
+    background-color: #5fc9fc;
 
 }
 
 .main {
-    background-color: #fffff4;
+    background-color: #eeffff;
     padding: 20px;
+}
+/*
+#headerimage{
+    background-image: url("images/factory_background.png");
+}
+*/
+
+#chartdiv {
+    width: 100%;
+    height: 500px;
 }
 
 .slidecontainer {

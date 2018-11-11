@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <script src="ammap/ammap.js"></script>
+    <script src="ammap/maps/js/worldHigh.js"></script>
+    <script src="ammap/plugins/export/export.min.js"></script>
+    <script src="ammap/themes/light.js"></script>
     <script src="Data/data.js"></script>
+    <script src="Data/ChartCreator.js"></script>
     <script src="main.js"></script>
     <link rel="stylesheet" href="main.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="ammap/plugins/export/export.css" type="text/css" media="all" />
 </head>
+
 <body>
     <div class="main">
-    <h1>ClearVue</h1>
-    <button onclick="startSim()">Sim</button>
-    <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
-        <input type="range" min="1" max="100" value="50" class="slider" id="carslider" oninput="sliderChange(this.value, this.id)">
-        <output id="caroutput"></output>
-    </div>
-    <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
-        <input type="range" min="1" max="100" value="50" class="slider" id="factoryslider" oninput="sliderChange(this.value, this.id)">
-        <output id="factoryoutput"></output>
-    </div>
-    <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
-        <input type="range" min="1" max="100" value="50" class="slider" id="farmslider" oninput="sliderChange(this.value, this.id)">
-        <output id="farmoutput"></output>
-    </div>
+        <div id="headerimage">
+
+        </div>
+        <div>
+            <h1>ClearVue</h1>
+            <button onclick="startSim()">Sim</button>
+            <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
+                <input type="range" min="-10" max="10" value="0" class="slider" id="carslider" oninput="sliderChange(this.value, this.id)">
+                <output id="caroutput"></output>
+            </div>
+            <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
+                <input type="range" min="-10" max="10" value="0" class="slider" id="factoryslider" oninput="sliderChange(this.value, this.id)">
+                <output id="factoryoutput"></output>
+            </div>
+            <div class="slidecontainer" style="padding-top: 10px; padding-bottom: 10px">
+                <input type="range" min="-10" max="10" value="0" class="slider" id="farmslider" oninput="sliderChange(this.value, this.id)">
+                <output id="farmoutput"></output>
+            </div>
+        </div>
+        <div id="chartdiv"></div>
     </div>
     <script>
-        sliderChange(50, "carslider");
-        sliderChange(50, "factoryslider");
-        sliderChange(50, "farmslider");
+        sliderChange(0, "carslider");
+        sliderChange(0, "factoryslider");
+        sliderChange(0, "farmslider");
     </script>
 </body>
+
 </html>

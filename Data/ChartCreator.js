@@ -2,8 +2,8 @@ function createMap(locations, regions) {
     var map = AmCharts.makeChart("chartdiv", {
         "type": "map",
         "dataProvider": {
-            "map": "worldHigh"//,
-            //"areas": regions
+            "map": "worldHigh",
+            "areas": regions
         },
         "colorSteps": 10,
         "areasSettings": {
@@ -18,7 +18,7 @@ function createMap(locations, regions) {
             "maxValue": "a lot!"
         },
         "areasSettings": {
-            "autoZoom": true
+            "autoZoom": false
         },
 
         "export": {
@@ -26,4 +26,4 @@ function createMap(locations, regions) {
         }
     });
 }
-    createMap([createLocPoint("New York", 40, 70, 10)], [createCountryShade("US", "United States", 10)]);
+createMap(0, 0);
