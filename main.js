@@ -23,10 +23,6 @@ function startSim(){
     }, 175);
 }
 
-function blankFunction() {
-
-}
-
 function sliderChange(val, id) {
     if(id == 'carslider')
         document.getElementById('caroutput').innerHTML = val+' %';
