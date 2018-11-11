@@ -5,7 +5,14 @@ function startSim(){
     var cars = document.getElementById("carslider").value;
     var facts = document.getElementById("factoryslider").value;
     var farms = document.getElementById("farmslider").value;
-    createSim(cars/100.0, farms/100.0, facts/100.0);
+    var samples = createSim(cars / 100.0, farms / 100.0, facts / 100.0);
+    var counter = 0;
+    var tmr = setInterval(function() {
+        if (counter < 120) {
+            var sampleData = createData(samples, counter++);
+            createMap(sampleData);
+        }
+    }, 100);
 }
 
 function sliderChange(val, id) {

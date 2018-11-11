@@ -95,8 +95,8 @@ AmCharts.themes.dark = {
 	// ammap
 	AreasSettings: {
 		alpha: 0.8,
-		color: "#FFFFFF",
-		colorSolid: "#000000",
+		color: "#ffff66",
+		colorSolid: "#cc3300",
 		unlistedAreasAlpha: 0.4,
 		unlistedAreasColor: "#FFFFFF",
 		outlineColor: "#000000",

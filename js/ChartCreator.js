@@ -1,11 +1,162 @@
 function createMap(locations, regions) {
     var map = AmCharts.makeChart("chartdiv", {
         "type": "map",
+        "theme": "dark",
         "dataProvider": {
-            "map": "worldHigh"//,
-            //"areas": regions
+            "map": "usaLow",
+            "areas": [ {
+                  "id": "US-AL",
+                  "value": 60
+                }, {
+                  "id": "US-AK",
+                  "value": 61
+                }, {
+                  "id": "US-AZ",
+                  "value": 60
+                }, {
+                  "id": "US-AR",
+                  "value": 62
+                }, {
+                  "id": "US-CA",
+                  "value": 59
+                }, {
+                  "id": "US-CO",
+                  "value": 68
+                }, {
+                  "id": "US-CT",
+                  "value": 62
+                }, {
+                  "id": "US-DE",
+                  "value": 63
+                }, {
+                  "id": "US-FL",
+                  "value": 65
+                }, {
+                  "id": "US-GA",
+                  "value": 68
+                }, {
+                  "id": "US-HI",
+                  "value": 59
+                }, {
+                  "id": "US-ID",
+                  "value": 59
+                }, {
+                  "id": "US-IL",
+                  "value": 64
+                }, {
+                  "id": "US-IN",
+                  "value": 65
+                }, {
+                  "id": "US-IA",
+                  "value": 65
+                }, {
+                  "id": "US-KS",
+                  "value": 62
+                }, {
+                  "id": "US-KY",
+                  "value": 63
+                }, {
+                  "id": "US-LA",
+                  "value": 60
+                }, {
+                  "id": "US-ME",
+                  "value": 61
+                }, {
+                  "id": "US-MD",
+                  "value": 62
+                }, {
+                  "id": "US-MA",
+                  "value": 66
+                }, {
+                  "id": "US-MI",
+                  "value": 61
+                }, {
+                  "id": "US-MN",
+                  "value": 63
+                }, {
+                  "id": "US-MS",
+                  "value": 70
+                }, {
+                  "id": "US-MO",
+                  "value": 66
+                }, {
+                  "id": "US-MT",
+                  "value": 66
+                }, {
+                  "id": "US-NE",
+                  "value": 58
+                }, {
+                  "id": "US-NV",
+                  "value": 57
+                }, {
+                  "id": "US-NH",
+                  "value": 59
+                }, {
+                  "id": "US-NJ",
+                  "value": 56
+                }, {
+                  "id": "US-NM",
+                  "value": 59
+                }, {
+                  "id": "US-NY",
+                  "value": 60
+                }, {
+                  "id": "US-NC",
+                  "value": 61
+                }, {
+                  "id": "US-ND",
+                  "value": 64
+                }, {
+                  "id": "US-OH",
+                  "value": 62
+                }, {
+                  "id": "US-OK",
+                  "value": 65
+                }, {
+                  "id": "US-OR",
+                  "value": 63
+                }, {
+                  "id": "US-PA",
+                  "value": 63
+                }, {
+                  "id": "US-RI",
+                  "value": 65
+                }, {
+                  "id": "US-SC",
+                  "value": 62
+                }, {
+                  "id": "US-SD",
+                  "value": 67
+                }, {
+                  "id": "US-TN",
+                  "value": 66
+                }, {
+                  "id": "US-TX",
+                  "value": 65
+                }, {
+                  "id": "US-UT",
+                  "value": 65
+                }, {
+                  "id": "US-VT",
+                  "value": 61
+                }, {
+                  "id": "US-VA",
+                  "value": 60
+                }, {
+                  "id": "US-WA",
+                  "value": 58
+                }, {
+                  "id": "US-WV",
+                  "value": 56
+                }, {
+                  "id": "US-WI",
+                  "value": 67
+                }, {
+                  "id": "US-WY",
+                  "value": 66
+                } ]
         },
-        "colorSteps": 10,
+        "colorSteps": 25,
         "areasSettings": {
 
             "alpha": 0.8,
@@ -14,16 +165,15 @@ function createMap(locations, regions) {
         },
         "valueLegend": {
             "right": 10,
-            "minValue": "little",
-            "maxValue": "a lot!"
+            "minValue": "cool",
+            "maxValue": "hot"
         },
         "areasSettings": {
-            "autoZoom": true
+            "autoZoom": false
         },
-
         "export": {
             "enabled": true
         }
     });
 }
-    createMap([createLocPoint("New York", 40, 70, 10)], [createCountryShade("US", "United States", 10)]);
+createMap(0, 0);

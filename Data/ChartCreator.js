@@ -1,21 +1,93 @@
-function createMap(locations, regions) {
+function createMap(data) {
+    AmCharts.addInitHandler(function (chart) {
+      var dataProvider = chart.dataProvider;
+      var areas = chart.dataProvider.areas;
+      var colorRanges = dataProvider.colorRanges;
+
+      // Based on https://www.sitepoint.com/javascript-generate-lighter-darker-color/
+      function ColorLuminance(hex, lum) {
+
+        // validate hex string
+        hex = String(hex).replace(/[^0-9a-f]/gi, '');
+        if (hex.length < 6) {
+          hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        }
+        lum = lum || 0;
+
+        // convert to decimal and change luminosity
+        var rgb = "#", c, i;
+        for (i = 0; i < 3; i++) {
+          c = parseInt(hex.substr(i*2,2), 16);
+          c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+          rgb += ("00"+c).substr(c.length);
+        }
+
+        return rgb;
+      }
+
+      if (colorRanges) {
+
+        var item;
+        var range;
+        var average;
+        var variation;
+        for (var i = 0, iLen = areas.length; i < iLen; i++) {
+
+          item = areas[i];
+
+          for (var x = 0, xLen = colorRanges.length; x < xLen; x++) {
+
+            range = colorRanges[x];
+
+            if (item.value >= range.start && item.value <= range.end) {
+              average = (range.start - range.end) / 2;
+
+              if (item.value <= average)
+                variation = (range.variation * -1) / item.value * average;
+              else if (item.value > average)
+                variation = range.variation / item.value * average;
+
+              item.color = ColorLuminance(range.color, variation.toFixed(2));
+            }
+          }
+        }
+      }
+
+    }, ["map"]);
+
     var map = AmCharts.makeChart("chartdiv", {
         "type": "map",
+        "theme": "dark",
         "dataProvider": {
-            "map": "worldHigh",
-            "areas": regions
+            "map": "usaLow",
+            "colorRanges": [{
+              "start": 0,
+              "end": 55,
+              "color": "#00ccff",
+              "variation": 0.4
+            }, {
+              "start": 56,
+              "end": 65,
+              "color": "#ffffcc",
+              "variation": 0.4
+            }, {
+              "start": 66,
+              "end": 100,
+              "color": "#cc3300",
+              "variation": 0.4
+            }],
+            "areas": data
         },
         "colorSteps": 10,
         "areasSettings": {
-
             "alpha": 0.8,
             "unlistedAreasAlpha": 0.1,
             "balloonText": "[[title]] joined EU at [[customData]]"
         },
         "valueLegend": {
             "right": 10,
-            "minValue": "little",
-            "maxValue": "a lot!"
+            "minValue": "cool",
+            "maxValue": "hot"
         },
         "areasSettings": {
             "autoZoom": false
@@ -26,4 +98,18 @@ function createMap(locations, regions) {
         }
     });
 }
-createMap(0, 0);
+
+createMap(0);
+
+function createData(samples, index) {
+    var sample = samples[index];
+    var states = sample.states;
+    var data = [];
+    for (var i = 0; i < 10; i++) {
+        var state = states[i];
+        var point = {"id": state.abrv, "value": state.temp};
+        console.log(state.abrv + ": " + state.temp);
+        data.push(point);
+    }
+    return data;
+}
